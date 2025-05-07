@@ -8,14 +8,39 @@ string GetTime(){
     string info= "";
     long long now = time(0);
     return ctime(&now);
-};
+}
+
+
+
+void ProcessTime(int hour,int minute, int second){
+    while (true){
+        system("cls");
+        cout<< hour <<":"<<minute<<":"<<second<<"\n";
+        Sleep(1000);
+        if (second>59){
+            second = 0;
+            minute++;
+
+        }
+        if (minute>59){
+            minute = 0;
+            hour++;
+        }
+        if (hour>23){
+            hour = 0;
+        }
+    }
+}
+
+
 
 void Display(string h,string m,string s){
     int hour = stoi(h);
     int minute = stoi(m);
     int second = stoi(s);
+    ProcessTime(hour,minute,second);
+}
 
-};
 
 
 void ThrowAwayTheGabageInfo(){
@@ -38,6 +63,6 @@ void ThrowAwayTheGabageInfo(){
 }
 
 int main(){
-
+ProcessTime(int hour ,int minute , int second);
 return 0;
 }
