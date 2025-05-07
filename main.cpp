@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <ctime>
 #include <string>
+#include <iomanip>
 using namespace std;
 
 string GetTime(){
@@ -15,8 +16,10 @@ string GetTime(){
 void ProcessTime(int hour,int minute, int second){
     while (true){
         system("cls");
-        cout<< hour <<":"<<minute<<":"<<second<<"\n";
+        cout << setfill('0') << setw(2) << hour << ":"
+         << setw(2) << minute << ":" << setw(2) << second << "\n";
         Sleep(1000);
+        second++;
         if (second>59){
             second = 0;
             minute++;
@@ -63,6 +66,6 @@ void ThrowAwayTheGabageInfo(){
 }
 
 int main(){
-ProcessTime(int hour ,int minute , int second);
+ThrowAwayTheGabageInfo();
 return 0;
 }
