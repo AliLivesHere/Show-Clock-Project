@@ -9,6 +9,15 @@ string GetTime(){
     long long now = time(0);
     return ctime(&now);
 };
+
+void Display(string h,string m,string s){
+    int hour = stoi(h);
+    int minute = stoi(m);
+    int second = stoi(s);
+
+};
+
+
 void ThrowAwayTheGabageInfo(){
     string info = GetTime();
     int index = info.find(":");
@@ -24,6 +33,8 @@ void ThrowAwayTheGabageInfo(){
     string second;
     second = info[index+4];
     second +=info[index+5];
+    
+    Display(hour,minute,second);
 }
 
 int main(){
